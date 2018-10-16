@@ -11,7 +11,7 @@ server.use(middlewares);
 const mockServerDataJson = mockServerData();
 
 // Routes
-server.get('/v1/products', (req, res) => {
+server.get('/api/todos', (req, res) => {
   const data = mockServerDataJson[req.header('X-User-Id')].products;
   res.jsonp(data);
 });

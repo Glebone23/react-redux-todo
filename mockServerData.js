@@ -1,10 +1,10 @@
 module.exports = () => ({
-  111111111: {
+  0: {
     products: [
-      { id: 1, name: 'Item 1' },
-      { id: 2, name: 'Item 2' },
-      { id: 3, name: 'Item 3' },
-      { id: 4, name: 'Item 4' },
+      { id: -1, name: 'Recompose' },
+      { id: -2, name: 'Reselect' },
+      { id: -3, name: 'ImmutableJS' },
+      { id: -4, name: 'Components and Containers' },
     ],
   },
 });
