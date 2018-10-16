@@ -34,5 +34,5 @@ export const enhance = compose(
     todos: props.todos.toJS(),
   })),
 );
-//
+
 export default enhance(ToDo);
