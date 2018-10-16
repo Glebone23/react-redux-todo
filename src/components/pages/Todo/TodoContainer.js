@@ -5,10 +5,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { addTodo, removeTodo } from 'actions';
 import { getTodos } from 'selectors';
-import ToDo from './ToDo';
+import Todo from './Todo';
 
 export const enhance = compose(
-  setDisplayName('ToDoContainer'),
+  setDisplayName('TodoContainer'),
   connect(
     state => ({
       todos: getTodos(state),
@@ -39,4 +39,4 @@ export const enhance = compose(
   })),
 );
 
-export default enhance(ToDo);
+export default enhance(Todo);

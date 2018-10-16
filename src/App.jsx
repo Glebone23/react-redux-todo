@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { ToDo } from 'components/pages';
+import { Todo } from 'components/pages';
 import store from './store/store';
 
 const displayName = 'Application';
@@ -14,12 +14,12 @@ const defaultProps = {
   title: 'Hello, React by default!',
 };
 
-export default function App({ title }) {
+function App({ title }) {
   return (
     <Provider store={store}>
       <React.Fragment>
         <h1>{title}</h1>
-        <ToDo />
+        <Todo />
       </React.Fragment>
     </Provider>
   );
@@ -28,3 +28,5 @@ export default function App({ title }) {
 App.displayName = displayName;
 App.propTypes = propTypes;
 App.defaultProps = defaultProps;
+
+export default App;

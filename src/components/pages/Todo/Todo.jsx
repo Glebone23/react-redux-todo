@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TodoItem } from 'components/widgets';
 
-const displayName = 'ToDo';
+const displayName = 'Todo';
 
 const propTypes = {
   todos: PropTypes.arrayOf(
@@ -15,7 +15,7 @@ const propTypes = {
 };
 
 
-export default function ToDo(props) {
+export default function Todo(props) {
   const { todos, handleRemoveTodo } = props;
   return (
     <main>
@@ -26,5 +26,5 @@ export default function ToDo(props) {
   );
 }
 
-ToDo.displayName = displayName;
-ToDo.propTypes = propTypes;
+Todo.displayName = displayName;
+Todo.propTypes = propTypes;
