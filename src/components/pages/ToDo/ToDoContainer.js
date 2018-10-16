@@ -3,7 +3,7 @@ import {
 } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { addTodo } from 'actions';
+import { addTodo, removeTodo } from 'actions';
 import { getTodos } from 'selectors';
 import ToDo from './ToDo';
 
@@ -15,7 +15,8 @@ export const enhance = compose(
     }),
     dispatch => bindActionCreators(
       {
-        dispatchAddProduct: addTodo,
+        dispatchAddTodo: addTodo,
+        dispatchRemoveTodo: removeTodo,
       },
       dispatch,
     ),
@@ -25,8 +26,11 @@ export const enhance = compose(
     changeName: ({ setName }) => (event) => {
       setName(event.currentTarget.value);
     },
-    handleAddProduct: ({ name, dispatchAddProduct }) => () => {
-      dispatchAddProduct(name);
+    handleAddTodo: ({ name, dispatchAddTodo }) => () => {
+      dispatchAddTodo(name);
+    },
+    handleRemoveTodo: ({ dispatchRemoveTodo }) => (id) => {
+      dispatchRemoveTodo(id);
     },
   }),
   mapProps(props => ({

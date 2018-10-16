@@ -11,15 +11,16 @@ const propTypes = {
       completed: PropTypes.bool.isRequired,
     }).isRequired,
   ).isRequired,
+  handleRemoveTodo: PropTypes.func.isRequired,
 };
 
 
 export default function ToDo(props) {
-  const { todos } = props;
+  const { todos, handleRemoveTodo } = props;
   return (
     <main>
       {todos.map(todo => (
-        <TodoItem key={todo.id} name={todo.name} />
+        <TodoItem key={todo.id} {...todo} onRemove={handleRemoveTodo} />
       ))}
     </main>
   );
