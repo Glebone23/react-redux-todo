@@ -7,17 +7,22 @@ const propTypes = {
   onClick: PropTypes.func,
   style: PropTypes.objectOf(PropTypes.string),
   children: PropTypes.string,
+  type: PropTypes.string,
 };
 
 const defaultProps = {
   onClick: undefined,
   style: {},
   children: '',
+  type: 'button',
 };
 
-function Button({ onClick, style, children }) {
+/* eslint-disable react/button-has-type */
+function Button({
+  onClick, style, children, type,
+}) {
   return (
-    <button type="button" onClick={onClick} style={style}>
+    <button type={type} onClick={onClick} style={style}>
       {children}
     </button>
   );

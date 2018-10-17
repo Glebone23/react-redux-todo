@@ -1,9 +1,9 @@
 import { List, Map } from 'immutable';
 import { handleActions } from 'redux-actions';
-// import { FULFILLED } from 'redux-promise-middleware';
 import {
   addTodo, removeTodo,
 } from 'actions';
+// import { FULFILLED } from 'redux-promise-middleware';
 
 let id = -1;
 

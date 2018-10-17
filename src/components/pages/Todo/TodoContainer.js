@@ -23,11 +23,14 @@ export const enhance = compose(
   ),
   withState('name', 'setName', ''),
   withHandlers({
+    // 1st function param -> props, second function param -> event
     changeName: ({ setName }) => (event) => {
       setName(event.currentTarget.value);
     },
-    handleAddTodo: ({ name, dispatchAddTodo }) => () => {
+    handleAddTodo: ({ name, dispatchAddTodo, setName }) => (event) => {
+      event.preventDefault();
       dispatchAddTodo(name);
+      setName('');
     },
     handleRemoveTodo: ({ dispatchRemoveTodo }) => (id) => {
       dispatchRemoveTodo(id);
