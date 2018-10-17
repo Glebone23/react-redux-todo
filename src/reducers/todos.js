@@ -5,17 +5,17 @@ import {
 } from 'actions';
 // import { FULFILLED } from 'redux-promise-middleware';
 
-let id = -1;
+let id = 0;
 
 export const initialTodosState = List([
-  Map({ id: 0, name: 'Learn React', completed: false }),
-  Map({ id: 1, name: 'Learn Redux', completed: false }),
+  Map({ id, name: 'Learn React', completed: false }),
+  Map({ id: id += 1, name: 'Learn Redux', completed: false }),
 ]);
 
 const todos = handleActions(
   {
     [addTodo]: (state, action) => {
-      id -= 1;
+      id += 1;
 
       return state.push(Map({ id, ...action.payload, completed: false }));
     },
