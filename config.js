@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Sports Store',
+  title: 'Todo App',
   icon: 'data:image/x-icon;base64,==',
   browserColor: '#3b3b3b',
   inject: true,
